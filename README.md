@@ -252,6 +252,7 @@ in this README come from the scripts in the repo.
 | `poster/poster.pdf` | ready A1 poster (594 x 841 mm, 1 page) |
 | `poster/CANVA_CONTENT.md` | copy/layout pack if rebuilding the poster in Canva |
 | `WIDS_Poster_Ted_Kamau.pdf` | submission-named copy of the A1 poster |
+| `DESCRIPTION.txt` | short description of every file in the submission |
 | `README.md`, `requirements.txt` | documentation and dependencies |
 
 The raw WPA3 captures (about 230 MB) are not included. Download them from the
