@@ -1,0 +1,3 @@
+time,mac,duration_s,peak_deauth_per_s,frames_per_s,rssi,score,source
+2026-02-13 07:34:12,02:00:00:00:00:72,55.0,215,229,-28.8,1.000,demo_attack.pcap
+2026-02-13 07:34:12,02:00:00:00:00:cb,55.0,1289,1298,-31.6,1.000,demo_attack.pcap

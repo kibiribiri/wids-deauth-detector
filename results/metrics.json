@@ -1,0 +1,142 @@
+{
+  "dataset": {
+    "windows": 2692,
+    "attack_windows": 553,
+    "normal_windows": 2139,
+    "macs": 235,
+    "train_windows": 1973,
+    "test_windows": 719
+  },
+  "models": [
+    {
+      "model": "Decision Tree",
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "confusion_matrix": [
+        [
+          607,
+          0
+        ],
+        [
+          0,
+          112
+        ]
+      ],
+      "classification_report": {
+        "normal": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 607.0
+        },
+        "deauth_flood": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 112.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 719.0
+        },
+        "weighted avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 719.0
+        }
+      }
+    },
+    {
+      "model": "Random Forest",
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "confusion_matrix": [
+        [
+          607,
+          0
+        ],
+        [
+          0,
+          112
+        ]
+      ],
+      "classification_report": {
+        "normal": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 607.0
+        },
+        "deauth_flood": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 112.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 719.0
+        },
+        "weighted avg": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 719.0
+        }
+      }
+    }
+  ],
+  "top_features": [
+    {
+      "feature": "n_deauth",
+      "importance": 0.2527212643237367
+    },
+    {
+      "feature": "dst_diversity",
+      "importance": 0.16933605257615802
+    },
+    {
+      "feature": "n_mgmt",
+      "importance": 0.16082908322649248
+    },
+    {
+      "feature": "frames_per_sec",
+      "importance": 0.1138708246508573
+    },
+    {
+      "feature": "n_frames",
+      "importance": 0.09401785060157077
+    },
+    {
+      "feature": "deauth_ratio",
+      "importance": 0.059229624747882056
+    },
+    {
+      "feature": "mean_len",
+      "importance": 0.04169712068068266
+    },
+    {
+      "feature": "mean_rssi",
+      "importance": 0.03721938714829474
+    },
+    {
+      "feature": "mgmt_ratio",
+      "importance": 0.027969755291715897
+    },
+    {
+      "feature": "std_rssi",
+      "importance": 0.020983621384045227
+    }
+  ]
+}
