@@ -1,0 +1,31 @@
+{
+  "features": [
+    "n_frames",
+    "frames_per_sec",
+    "n_deauth",
+    "n_disassoc",
+    "n_auth",
+    "n_assoc",
+    "n_beacon",
+    "n_probe",
+    "n_data",
+    "n_mgmt",
+    "n_ctrl",
+    "mean_rssi",
+    "std_rssi",
+    "mean_len",
+    "unique_dst",
+    "dst_diversity",
+    "broadcast_ratio",
+    "deauth_ratio",
+    "disassoc_ratio",
+    "mgmt_ratio",
+    "retry_ratio",
+    "unique_reason_codes"
+  ],
+  "window_seconds": 1.0,
+  "positive_class": "deauth_flood",
+  "test_accuracy": 1.0,
+  "train_rows": 1973,
+  "test_rows": 719
+}
