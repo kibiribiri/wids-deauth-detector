@@ -1,0 +1,54 @@
+{
+  "source": {
+    "dataset": "WPA3 Attacks Dataset - Deauthentication attack",
+    "doi": "10.17632/cxx5t5nw7z.3",
+    "license": "CC BY 4.0",
+    "pcap": "wpa3_deauth.pcap",
+    "pcap_frames": 722606
+  },
+  "attack_interval": [
+    1770986052.0,
+    1770986422.0
+  ],
+  "split_cutoff": 1770986311.0,
+  "windows": 2692,
+  "attack_windows": 553,
+  "normal_windows": 2139,
+  "macs": 235,
+  "splits": {
+    "test": {
+      "windows": 719,
+      "attack": 112,
+      "normal": 607
+    },
+    "train": {
+      "windows": 1973,
+      "attack": 441,
+      "normal": 1532
+    }
+  },
+  "features": [
+    "n_frames",
+    "frames_per_sec",
+    "n_deauth",
+    "n_disassoc",
+    "n_auth",
+    "n_assoc",
+    "n_beacon",
+    "n_probe",
+    "n_data",
+    "n_mgmt",
+    "n_ctrl",
+    "mean_rssi",
+    "std_rssi",
+    "mean_len",
+    "unique_dst",
+    "dst_diversity",
+    "broadcast_ratio",
+    "deauth_ratio",
+    "disassoc_ratio",
+    "mgmt_ratio",
+    "retry_ratio",
+    "unique_reason_codes"
+  ]
+}
