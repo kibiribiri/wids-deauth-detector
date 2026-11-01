@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+data/raw/
+poster/*.aux
+poster/*.log
+poster/*.out
+poster/preview*.png
+WIDS_Ted_Kamau.zip
+.DS_Store
