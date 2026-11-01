@@ -1,0 +1,126 @@
+WIDS Submission: Deauthentication Flood Detection
+Author: Ted Kamau
+
+Dataset: WPA3 Attacks Dataset, Deauthentication attack capture
+DOI: 10.17632/cxx5t5nw7z.3
+Licence: CC BY 4.0
+
+This zip contains the code, prepared data, trained model, results and poster
+for my WIDS prototype. The system reads 802.11 captures and flags
+deauthentication floods. It only detects and alerts. It does not block
+traffic.
+
+FILES
+=====
+
+README.md
+  Full project description: dataset, features, model, results, setup,
+  limitations and AI use.
+
+requirements.txt
+  Python packages needed to run the code.
+
+.gitignore
+  Keeps the virtualenv, raw captures and LaTeX build files out of git.
+
+features.py
+  Extracts per-second, per-MAC features from a PCAP using tshark. It also has
+  a scapy backend for live capture.
+
+prepare_data.py
+  Builds the labelled window table and the two 60-second demo captures from
+  the raw WPA3 files.
+
+train.py
+  Trains and evaluates the Random Forest and Decision Tree, then writes the
+  model, metrics and figures.
+
+detect.py
+  Replays a PCAP, scores each MAC/second, groups positive windows into flood
+  episodes and writes alerts.
+
+data/wpa3_windows.csv
+  Prepared dataset: 2,692 windows with 22 features, label and train/test
+  split.
+
+data/dataset_summary.json
+  Dataset statistics, attack interval and split counts.
+
+data/demo_normal.pcap
+  60 seconds of normal traffic for the no-alert demo.
+
+data/demo_attack.pcap
+  60 seconds around the start of the deauth flood for the alert demo.
+
+models/wids_rf.joblib
+  Trained Random Forest model.
+
+models/metadata.json
+  Feature list, window size and model metadata.
+
+results/metrics.json
+  Accuracy, precision, recall, F1, confusion matrix and top features.
+
+results/confusion_matrix_random_forest.png
+  Random Forest confusion matrix on held-out traffic.
+
+results/confusion_matrix_decision_tree.png
+  Decision Tree confusion matrix on held-out traffic.
+
+results/feature_importance.png
+  Top 12 Random Forest features.
+
+results/test_predictions.csv
+  Scores and predictions for the held-out test windows.
+
+results/scored_demo_normal.csv
+  Scored windows from the normal demo.
+
+results/scored_demo_attack.csv
+  Scored windows from the attack demo.
+
+results/scored_wpa3_deauth.csv
+  Scored windows from the full 15-minute capture.
+
+results/alerts.csv
+  Sample alerts written by detect.py.
+
+poster/poster.pdf
+  A1 poster PDF built from LaTeX.
+
+poster/poster.tex
+  LaTeX source for the A1 poster.
+
+poster/CANVA_CONTENT.md
+  Copy and layout notes for rebuilding the poster in Canva.
+
+WIDS_Poster_Ted_Kamau.pdf
+  Submission copy of the A1 poster.
+
+DESCRIPTION.txt
+  This file.
+
+QUICK START
+===========
+
+  python3 -m venv .venv
+  .venv/bin/pip install -r requirements.txt
+  .venv/bin/python detect.py --pcap data/demo_normal.pcap
+  .venv/bin/python detect.py --pcap data/demo_attack.pcap
+  .venv/bin/python train.py
+
+RESULTS
+=======
+
+Held-out test set: 719 windows (607 normal, 112 attack).
+Random Forest accuracy: 100.0%
+Confusion matrix: TN 607, FP 0, FN 0, TP 112.
+Normal demo: 0 alerts.
+Attack demo: 2 alerts.
+
+NOTE
+====
+
+The raw WPA3 captures are not included because they are about 230 MB. The
+prepared windows, model and demo captures are included. See README.md for the
+dataset download link.
